@@ -1,0 +1,335 @@
+/* ----------------------------------------------------
+   GLOBAL — Soft Pastel UI
+/* ----------------------------------------------------
+   GLOBAL — Pastel Blue Background
+---------------------------------------------------- */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #d7e6f9; /* soft pastel blue */
+    color: #4a4a4a;
+    margin: 0;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Pastel Palette */
+:root {
+    --primary: #9bb7e0;          /* pastel blue for headings/buttons */
+    --primary-light: #c8d9f0;    /* lighter pastel blue */
+    --accent: #f7c8dc;           /* soft pink accent */
+    --accent-light: #fde3ef;
+    --text-dark: #3b3b3b;
+    --text-light: #6d6d6d;
+    --panel: #ffffff;             /* panels stay white for contrast */
+    --border: #e4e8f0;
+    --soft-shadow: 0 10px 28px rgba(150, 170, 200, 0.18);
+}
+
+/* Hero Overlay: make it blend with pastel blue background */
+.hero-overlay {
+    background: rgba(155, 183, 224, 0.25); /* slightly darker pastel blue haze */
+}
+
+/* ----------------------------------------------------
+   HEADER
+---------------------------------------------------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--primary);
+    transition: color 0.3s ease;
+}
+
+nav ul {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+.mobile-menu {
+    display: none;
+}
+
+/* ----------------------------------------------------
+   HERO
+---------------------------------------------------- */
+.hero {
+    height: 90vh;
+    background: url("hero.jpg") center/cover no-repeat;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(155, 183, 224, 0.25); /* pastel blue haze */
+    transition: background 0.4s ease;
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    color: var(--primary);
+    transition: color 0.3s ease;
+}
+
+.hero p {
+    font-size: 22px;
+    margin: 15px 0 30px;
+    color: var(--text-dark);
+}
+
+/* ----------------------------------------------------
+   BUTTONS
+---------------------------------------------------- */
+
+
+.btn {
+    position: relative;
+    padding: 14px 36px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #9bb7e0, #f7c8dc);
+    background-size: 200% 200%;
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
+    animation: pastelGlow 6s ease infinite;
+}
+
+/* Hover: soft lift + glow */
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(155, 183, 224, 0.28);
+}
+
+/* Slight bounce on click */
+.btn:active {
+    transform: scale(0.96);
+}
+
+/* Soft shimmer animation */
+@keyframes pastelGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Optional: if you want .btn-gold to remain as a unique variant */
+.btn-gold {
+    background: linear-gradient(135deg, #9bb7e0, #f7c8dc);
+}
+.btn {
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.btn-gold {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-gold:hover {
+    background: var(--primary-light);
+    transform: translateY(-3px);
+}
+
+/* ----------------------------------------------------
+   TITLES
+---------------------------------------------------- */
+.section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.section-line {
+    width: 80px;
+    height: 3px;
+    background: var(--accent);
+    margin: 0 auto 40px;
+    border-radius: 50px;
+}
+
+/* ----------------------------------------------------
+   SECTIONS
+---------------------------------------------------- */
+.services, .about, .gallery, .contact {
+    padding: 80px 40px;
+}
+
+/* ----------------------------------------------------
+   SERVICE GRID
+---------------------------------------------------- */
+.service-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 30px;
+    width: 270px;
+    border-radius: 14px;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--soft-shadow);
+    border-color: var(--primary-light);
+}
+
+.service-item h3 {
+    color: var(--primary);
+    font-family: 'Playfair Display', serif;
+}
+
+/* ----------------------------------------------------
+   ABOUT
+---------------------------------------------------- */
+.about p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text-light);
+    text-align: center;
+}
+
+/* ----------------------------------------------------
+   GALLERY
+---------------------------------------------------- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 14px;
+    border: 2px solid var(--border);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.gallery-grid img:hover {
+    border-color: var(--primary);
+    transform: scale(1.03);
+    box-shadow: var(--soft-shadow);
+}
+
+/* ----------------------------------------------------
+   CONTACT FORM
+---------------------------------------------------- */
+form {
+    max-width: 500px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+input, textarea {
+    padding: 14px;
+    background: #fdfdff;
+    border: 1px solid var(--border);
+    color: var(--text-dark);
+    border-radius: 10px;
+    transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+input:hover, textarea:hover {
+    border-color: var(--primary);
+}
+
+textarea {
+    height: 140px;
+}
+
+/* ----------------------------------------------------
+   FOOTER
+---------------------------------------------------- */
+footer {
+    padding: 35px;
+    text-align: center;
+    background: #f2f4fa;
+    color: var(--text-light);
+}
+
+/* ----------------------------------------------------
+   ANIMATIONS
+---------------------------------------------------- */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ----------------------------------------------------
+   MOBILE
+---------------------------------------------------- */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 44px; }
+    nav ul { display: none; }
+    .mobile-menu { display: block; }
+}
